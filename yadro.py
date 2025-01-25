@@ -1,5 +1,3 @@
-
-
 def count_letters(s: str) -> str:
     if len(s) == 0:
         return '0' 
@@ -19,20 +17,14 @@ def count_letters(s: str) -> str:
 
         return final_str
 
-def test():
-    s1 = 'AAABBC'
-    s2 = 'ABC'
-    s3 = 'A'
-    s4 = 'CCCCBFFFA'
-    s5 = ''
+def test() -> None:
+    strs = ['AAABBC', 'ABC', 'A', 'CCCCBFFFA', '']
+    valid = ['A3B2C1', 'A1B1C1', 'A1', 'C4B1F3A1', '0']
     
-    assert count_letters(s1) == 'A3B2C1'
-    assert count_letters(s2) == 'A1B1C1'
-    assert count_letters(s3) == 'A1'
-    assert count_letters(s4) == 'C4B1F3A1'
-    assert count_letters(s5) == '0'
+    for i in range(len(strs)):
+        assert count_letters(strs[i]) == valid[i]
+    
 
 
 if __name__ == '__main__':
-    
     test()
